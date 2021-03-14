@@ -1,0 +1,7 @@
+version: '3'
+services:
+  rutie-derive:
+    build:
+      context: .
+    volumes:
+      - .:/app
