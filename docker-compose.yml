@@ -1,7 +1,13 @@
 version: '3'
 services:
-  rutie-derive:
+  rutie-attr:
     build:
       context: .
+    volumes:
+      - .:/app
+  so_dec:
+    build:
+      context: .
+      dockerfile: Dockerfile.decompile
     volumes:
       - .:/app

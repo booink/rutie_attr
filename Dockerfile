@@ -75,3 +75,12 @@ RUN set -eux; \
         wget \
         ; \
     rm -rf /var/lib/apt/lists/*;
+
+RUN rustup component add clippy
+RUN cargo install cargo-watch cargo-make cargo-expand
+
+WORKDIR /app
+COPY Cargo.toml Cargo.toml
+ADD src src
+
+CMD ["bash"]
