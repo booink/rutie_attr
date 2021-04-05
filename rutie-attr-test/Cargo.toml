@@ -1,14 +1,15 @@
 [package]
-name = "rutie-attr-using"
+name = "rutie-attr-test"
 version = "1.0.0"
 authors = ["booink <booink.work@gmail.com>"]
 edition = "2018"
 
 [lib]
-name = "rutie_attr_using"
+name = "rutie_attr_test"
 crate-type = ["cdylib"]
 
 [dependencies]
 rutie = "0.8.2"
 lazy_static = "1.4"
 rutie_attr = { path = "../rutie-attr" }
+rutie_attr_backend = { path = "../rutie-attr-backend" }

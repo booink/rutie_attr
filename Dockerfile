@@ -80,7 +80,7 @@ RUN rustup component add clippy
 RUN cargo install cargo-watch cargo-make cargo-expand
 
 WORKDIR /app
-COPY Cargo.toml Cargo.toml
-ADD src src
+COPY rutie-attr/Cargo.toml rutie-attr/Cargo.toml
+ADD rutie-attr/src rutie-attr/src
 
 CMD ["bash"]
