@@ -1,10 +1,24 @@
-mod rutie_attr;
-use rutie_attr::rbclass::Rbclass;
-use rutie_attr::rbmethods::Rbmethods;
+mod rbclass;
+mod rbdef;
+mod rbmethods;
+mod method;
+mod argument;
+mod util;
 
+use once_cell::sync::Lazy;
+use std::collections::HashMap;
+use std::sync::Mutex;
+use rbclass::Rbclass;
+use rbmethods::Rbmethods;
 use proc_macro::TokenStream;
 use std::convert::From;
 use syn::{parse_macro_input, ItemFn, ItemImpl, ItemStruct};
+
+// rbclassで解析した構造体のフィールド情報をrbmethodsで使うためのグローバル変数
+static DEFINED_CLASSES: Lazy<Mutex<HashMap<String, Vec<String>>>> = Lazy::new(|| {
+    let m = HashMap::new();
+    Mutex::new(m)
+});
 
 #[proc_macro_attribute]
 pub fn rbclass(_attr: TokenStream, input: TokenStream) -> TokenStream {
