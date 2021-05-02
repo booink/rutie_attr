@@ -1,6 +1,6 @@
 [package]
 name = "rutie_attr_backend"
-version = "1.0.0"
+version = "0.1.0"
 authors = ["booink <booink.work@gmail.com>"]
 edition = "2018"
 

@@ -39,7 +39,7 @@ class Foo
     a
   end
 
-  def self.fuga!(b = "1")
+  def fuga!(b = "1")
     b
   end
 end

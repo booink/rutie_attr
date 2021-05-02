@@ -3,7 +3,6 @@ pub mod rbdef;
 pub mod rbmethods;
 mod method;
 mod argument;
-mod rbdef_attr_util;
 mod util;
 
 use once_cell::sync::Lazy;
